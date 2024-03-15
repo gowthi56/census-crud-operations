@@ -1,0 +1,66 @@
+<app-nav></app-nav>
+<div>
+    <div class="btn">
+        <button class="bg-blue-500 text-white rounded p-2 absolute top-24 w-[560px] mx-[500px]" (click)="toggleList()">
+            {{ showList ? 'Hide List' : 'Show List' }}
+        </button>
+    </div>
+    <div class="bg-slate-50 w-[560px] mx-[500px]  mt-[170px] mb-8" *ngIf="showList">
+        <table class="border-collapse border border-gray-500 w-full">
+            <thead>
+                <tr>
+                    <th class="border border-gray-500 p-2">User ID</th>
+                    <th class="border border-gray-500 p-2">First Name</th>
+                    <th class="border border-gray-500 p-2">Last Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of users" class="bg-slate-200 hover:bg-slate-600" (click)="showLoginForm(user.id)">
+                    <td class="border border-gray-500 p-2 text-center">{{ user.id }}</td>
+                    <td class="border border-gray-500 p-2 text-center">{{ user.firstName }}</td>
+                    <td class="border border-gray-500 p-2 text-center">{{ user.lastName }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div *ngIf="showPopup" class="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-75">
+    <div class="bg-white p-8 rounded-lg shadow-md">
+        <div class="flex justify-between">
+            <h2 class="text-xl font-bold mb-4">Login</h2>
+            <button class="bg-gray-200 font-bold py-1 px-2 border-gray-900" (click)="closeLoginForm()">X</button>
+        </div>
+        <form [formGroup]="loginForm" (submit)="login()" class="w-[400px]">
+            <div class="mb-4">
+                <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
+                <input type="text" id="username" formControlName="username" class="mt-1 p-2 border rounded-md w-full" [(ngModel)] = "username">
+                <div *ngIf="loginForm.get('username')?.errors && (loginForm.get('username')?.dirty || loginForm.get('username')?.touched)" class="text-red-500 text-sm mt-1">
+                    <span *ngIf="loginForm.get('username')?.errors?.['required']">Username is required</span>
+                </div>
+                <div *ngIf="invalidUsername && !loginForm.get('username')?.errors?.['required']" class="text-red-500 text-sm mt-1">
+                    <span>Invalid username</span>
+                </div>
+            </div>
+            <div class="mb-4">
+                <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                <div class="relative">
+                    <input type="{{ showPassword ? 'text' : 'password' }}" id="password" formControlName="password" class="mt-1 p-2 border rounded-md w-full" [(ngModel)] = 
+                    "password">
+                    <span (click)="togglePasswordVisibility()" class="absolute top-1/2 right-4 -translate-y-1/2 cursor-pointer">
+                        <i [ngClass]="showPassword ? 'fa fa-eye-slash' : 'fa fa-eye'" style="font-size: 12px;"></i>
+                    </span>
+                </div>
+                <div *ngIf="loginForm.get('password')?.errors && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)" class="text-red-500 text-sm mt-1">
+                    <span *ngIf="loginForm.get('password')?.errors?.['required']">Password is required</span>
+                </div>
+                <div *ngIf="invalidPassword && !loginForm.get('password')?.errors?.['required']" class="text-red-500 text-sm mt-1">
+                    Invalid password
+                </div>
+            </div>
+            <button type="submit" [disabled]="loginForm.invalid" class="bg-blue-500 text-white rounded p-2 w-full">Login</button>
+        </form>
+    </div>
+</div>
+
+
+

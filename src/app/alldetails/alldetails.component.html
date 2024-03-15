@@ -1,0 +1,95 @@
+
+  <div class="bg-slate-300 w-[700px] mx-auto my-[150px] pb-2">
+    <h2 class="font-bold text-3xl text-center">User Details</h2>
+    <div class="mx-8">
+      <table class="border-collapse border border-black mx-auto my-9">
+        <tr>
+            <td class="border border-black px-4 py-2"><strong>ID:</strong></td>
+            <td class="border border-black px-4 py-2">{{ user.id }}</td>
+          </tr>
+        <tr>
+          <td class="border border-black px-4 py-2"><strong>First Name:</strong></td>
+          <td class="border border-black px-4 py-2">{{ user.firstName }}</td>
+        </tr>
+        <tr>
+          <td class="border border-black px-4 py-2"><strong>Last Name:</strong></td>
+          <td class="border border-black px-4 py-2">{{ user.lastName }}</td>
+        </tr>
+        <tr>
+          <td class="border border-black px-4 py-2"><strong>Maiden Name:</strong></td>
+          <td class="border border-black px-4 py-2">{{ user.maidenName }}</td>
+        </tr>
+        <tr>
+          <td class="border border-black px-4 py-2"><strong>Phone:</strong></td>
+          <td class="border border-black px-4 py-2">{{ user.phone }}</td>
+        </tr>
+        <tr>
+          <td class="border border-black px-4 py-2"><strong>Email:</strong></td>
+          <td class="border border-black px-4 py-2">{{ user.email }}</td>
+        </tr>
+        <tr>
+          <td class="border border-black px-4 py-2"><strong>Age:</strong></td>
+          <td class="border border-black px-4 py-2">{{ user.age }}</td>
+        </tr>
+        <tr>
+          <td class="border border-black px-4 py-2"><strong>Gender:</strong></td>
+          <td class="border border-black px-4 py-2">{{ user.gender }}</td>
+        </tr>
+        <tr>
+          <td class="border border-black px-4 py-2"><strong>Birthdate:</strong></td>
+          <td class="border border-black px-4 py-2">{{ user.birthDate | date }}</td>
+        </tr>
+        <tr>
+          <td class="border border-black px-4 py-2"><strong>Blood Group:</strong></td>
+          <td class="border border-black px-4 py-2">{{ user.bloodGroup }}</td>
+        </tr>
+        <tr>
+          <td class="border border-black px-4 py-2"><strong>Username:</strong></td>
+          <td class="border border-black px-4 py-2">{{ user.username }}</td>
+        </tr>
+        <tr>
+          <td class="border border-black px-4 py-2"><strong>Height:</strong></td>
+          <td class="border border-black px-4 py-2">{{ user.height }}</td>
+        </tr>
+        <tr>
+          <td class="border border-black px-4 py-2"><strong>Weight:</strong></td>
+          <td class="border border-black px-4 py-2">{{ user.weight }}</td>
+        </tr>
+        <tr>
+          <td class="border border-black px-4 py-2"><strong>Eye Color:</strong></td>
+          <td class="border border-black px-4 py-2">{{ user.eyeColor }}</td>
+        </tr>
+        <tr>
+          <td class="border border-black px-4 py-2"><strong>IP:</strong></td>
+          <td class="border border-black px-4 py-2">{{ user.ip }}</td>
+        </tr>
+        <tr>
+          <td class="border border-black px-4 py-2"><strong>Domain:</strong></td>
+          <td class="border border-black px-4 py-2">{{ user.domain }}</td>
+        </tr>
+        <tr>
+          <td class="border border-black px-4 py-2"><strong>Hair Color:</strong></td>
+          <td class="border border-black px-4 py-2">{{ user.hair.color }}</td>
+        </tr>
+        <tr>
+          <td class="border border-black px-4 py-2"><strong>Address:</strong></td>
+          <td class="border border-black px-4 py-2">{{ user.address.city }}</td>
+        </tr>
+        <tr>
+          <td class="border border-black px-4 py-2"><strong>University:</strong></td>
+          <td class="border border-black px-4 py-2">{{ user.university }}</td>
+        </tr>
+        <tr>
+          <td class="border border-black px-4 py-2"><strong>Bank Details:</strong></td>
+          <td class="border border-black px-4 py-2">{{ user.bank.cardNumber }}</td>
+        </tr>
+        <tr>
+          <td class="border border-black px-4 py-2"><strong>Company:</strong></td>
+          <td class="border border-black px-4 py-2">{{ user.company.name }}</td>
+        </tr>
+      </table>
+    </div>
+    <button class="bg-blue-500 text-slate-50 w-[200px] p-2 rounded ms-[240px] my-2" (click) = "goBack()">GoBack</button>
+  </div>
+  
+  

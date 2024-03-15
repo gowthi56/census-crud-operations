@@ -1,0 +1,6 @@
+p.p-4::first-letter {
+  font-size: 4em;
+  line-height: 0.5em; /* Decrease line height to fit first letter */
+  margin-top: -0.5em; /* Negative margin to overlap into the second row */
+}
+

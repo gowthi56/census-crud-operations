@@ -1,0 +1,18 @@
+<app-nav></app-nav>
+<div class = "mt-[130px] bg-slate-300 w-[500px] h-[300px] ms-[500px]">
+    <form [formGroup]="userForm" (ngSubmit)="addUser()">
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input type="text" class="form-control" id="firstName" formControlName="firstName">
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <input type="text" class="form-control" id="lastName" formControlName="lastName">
+        </div>
+        <div class="form-group">
+          <label for="age">Age</label>
+          <input type="number" class="form-control" id="age" formControlName="age">
+        </div>
+        <button type="submit" class="btn btn-primary">Add User</button>
+      </form>
+</div>
